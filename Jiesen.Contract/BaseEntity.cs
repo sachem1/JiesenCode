@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jiesen.EntityFramework
+namespace Jiesen.Contract
 {
-    public class Class1
+    public class BaseEntity
     {
+        public long Id { get; set; }
     }
 }

@@ -19,3 +19,7 @@
 /Jiesen.EntityFramework/bin/Debug
 /Jiesen.Framework/obj/Debug
 /Jiesen.Framework/bin/Debug
+/Jiesen.Contract/obj/Debug
+/Jiesen.Contract/bin/Debug
+/Jiesen.Dapper/obj/Debug
+/packages/EntityFramework.6.2.0
