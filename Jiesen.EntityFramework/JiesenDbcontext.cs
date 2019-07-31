@@ -13,7 +13,7 @@ using Jiesen.Contract;
 
 namespace Jiesen.EntityFramework
 {
-    public class JiesenDbContext:DbContext
+    public class JiesenDbContext : DbContext
     {
         public JiesenDbContext() : base("Data Source =.; Initial Catalog = Develop; User ID = sa; Password=sa1230.;Connect Timeout = 30; Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
         {
