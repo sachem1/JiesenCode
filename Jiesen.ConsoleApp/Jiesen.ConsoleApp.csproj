@@ -36,7 +36,11 @@
     <Reference Include="Autofac, Version=4.9.3.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.9.3\lib\net45\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="CacheManager.Core, Version=1.2.0.0, Culture=neutral, PublicKeyToken=5b450b4fb65c4cdb, processorArchitecture=MSIL">
+      <HintPath>..\packages\CacheManager.Core.1.2.0\lib\net45\CacheManager.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -57,6 +62,14 @@
     <ProjectReference Include="..\Component\Jiesen.Component.Contract\Jiesen.Component.Contract.csproj">
       <Project>{f8501557-4362-4340-8499-3f62ea539357}</Project>
       <Name>Jiesen.Component.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Component\Jiesen.Component.Service\Jiesen.Component.Service.csproj">
+      <Project>{77ef9b7a-3b57-412c-896e-94ea8e1e932a}</Project>
+      <Name>Jiesen.Component.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jiesen.Caching\Jiesen.Caching.csproj">
+      <Project>{7e527026-06b8-4715-89c4-6d5903a3672b}</Project>
+      <Name>Jiesen.Caching</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
