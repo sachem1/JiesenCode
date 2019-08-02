@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Autofac;
 
-namespace Jiesen.Component.Contract
+namespace Jiesen.ConsoleApp
 {
-    public class ContractModule : Module
+    public class Test
     {
-        public ContractModule()
+        public void Resolve()
         {
+            
         }
     }
 }
