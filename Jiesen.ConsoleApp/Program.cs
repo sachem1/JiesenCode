@@ -19,7 +19,6 @@ namespace Jiesen.ConsoleApp
 
         static void Main(string[] args)
         {
-<<<<<<< .mine
             using (JiesenDbContext jiesenDbContext = new JiesenDbContext())
             {
                 Person person = new Person() { Name = "test" };
@@ -28,14 +27,6 @@ namespace Jiesen.ConsoleApp
 
                 var result = jiesenDbContext.Persons.Select(x => x.Name.Contains("te"));
             }
-
-
-
-
-
-
-
-=======
             //{
             //    _container = ConfigureDependencies();
             //    var testService = _container.Resolve<ITestService>();
@@ -51,7 +42,6 @@ namespace Jiesen.ConsoleApp
             }
 
             Console.ReadLine();
->>>>>>> .theirs
         }
 
         private static string Bakversion()
@@ -102,11 +92,11 @@ namespace Jiesen.ConsoleApp
 
         private static void CacheTest()
         {
-            //var cache = CacheFactory.Build("test", setting => setting.withred(true));
-            //cache.Add("dd", "123");
-            //Thread.Sleep(1200);
-            //var result = cache.Get("dd");
-            //Console.WriteLine(result);
+            var cache = CacheFactory.Build("test", setting => setting.WithDictionaryHandle(true));
+            cache.Add("dd", "123");
+            Thread.Sleep(1200);
+            var result = cache.Get("dd");
+            Console.WriteLine(result);
         }
     }
 }
