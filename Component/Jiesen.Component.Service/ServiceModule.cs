@@ -13,7 +13,7 @@ namespace Jiesen.Component.Service
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<TestService>().As<ITestService>();
+            builder.RegisterType<TestService>().As<ITestService>().InstancePerLifetimeScope();
         }
     }
 }
