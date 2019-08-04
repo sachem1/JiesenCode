@@ -24,3 +24,6 @@
 /Jiesen.Dapper/obj/Debug
 /packages/EntityFramework.6.2.0
 /packages
+/Test/Jiesen.Caching.Test/bin/Debug
+/Test/Jiesen.Framework.Test/bin/Debug
+/Test/Jiesen.Framework.Test/obj/Debug
