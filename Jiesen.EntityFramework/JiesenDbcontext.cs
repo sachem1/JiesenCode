@@ -15,7 +15,13 @@ namespace Jiesen.EntityFramework
 {
     public class JiesenDbContext : DbContext
     {
-        public JiesenDbContext() : base("Data Source =.; Initial Catalog = Develop; User ID = sa; Password=sa1230.;Connect Timeout = 30; Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+        private static string connStr1 =
+            "Data Source =.; Initial Catalog = Develop; User ID = sa; Password=sa1230.;Connect Timeout = 30; Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+        private static string connStr =
+            "Data Source =192.168.7.208; Initial Catalog = Develop; User ID = sa; Password=yitong2015_!@#$;Connect Timeout = 30; Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+        public JiesenDbContext() : base(connStr)
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<JiesenDbContext>());
         }

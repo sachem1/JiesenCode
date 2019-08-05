@@ -20,14 +20,14 @@ namespace Jiesen.ConsoleApp
 
         static void Main(string[] args)
         {
-            //using (JiesenDbContext jiesenDbContext = new JiesenDbContext())
-            //{
-            //    Person person = new Person() { Name = "test" };
-            //    jiesenDbContext.Persons.Add(person);
-            //    jiesenDbContext.SaveChanges();
+            using (JiesenDbContext jiesenDbContext = new JiesenDbContext())
+            {
+                Person person = new Person() { Name = "test" };
+                jiesenDbContext.Persons.Add(person);
+                jiesenDbContext.SaveChanges();
 
-            //    var result = jiesenDbContext.Persons.Select(x => x.Name.Contains("te"));
-            //}
+                var result = jiesenDbContext.Persons.Select(x => x.Name.Contains("te"));
+            }
             //{
             _container = ConfigureDependencies();
             //    var testService = _container.Resolve<ITestService>();

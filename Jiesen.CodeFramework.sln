@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiesen.Framework.Test", "Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiesen.Caching.Test", "Test\Jiesen.Caching.Test\Jiesen.Caching.Test.csproj", "{8D829321-D3E2-43F0-8846-C64266D8B760}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiesen.WebApplication", "Jiesen.WebApplication\Jiesen.WebApplication.csproj", "{875DC04C-A557-4031-907A-43E63A44EC52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{8D829321-D3E2-43F0-8846-C64266D8B760}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D829321-D3E2-43F0-8846-C64266D8B760}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D829321-D3E2-43F0-8846-C64266D8B760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{875DC04C-A557-4031-907A-43E63A44EC52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{875DC04C-A557-4031-907A-43E63A44EC52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{875DC04C-A557-4031-907A-43E63A44EC52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{875DC04C-A557-4031-907A-43E63A44EC52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
