@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.IO;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Jiesen.Framework.Common;
 using Jiesen.Framework.ConfigManager;
 using Newtonsoft.Json;
@@ -22,6 +23,9 @@ namespace Jiesen.Caching.Redis
         /// redis链接信息
         /// </summary>
         private static ConcurrentDictionary<string, ConnectionMultiplexer> _connnections = new ConcurrentDictionary<string, ConnectionMultiplexer>();
+
+
+        private static ConcurrentDictionary<string, Task<ConnectionMultiplexer>> _connectionMultiplexers = new ConcurrentDictionary<string, Task<ConnectionMultiplexer>>();
         private static TextWriter _log;
 
         public static void SetRedisLog(TextWriter writer)
@@ -55,6 +59,14 @@ namespace Jiesen.Caching.Redis
             return connection.GetDatabase();
         }
 
+        public static Task<ConnectionMultiplexer> GetClientAsync(RedisSetting setting)
+        {
+            _connectionMultiplexers.AddOrUpdate(setting.ClientName,key =>
+            {
+                return ConnectionMultiplexer.ConnectAsync(Convert(setting));
+            });
+        }
+
         private static ConfigurationOptions Convert(RedisSetting setting)
         {
             string[] writeServerList = setting.ServerList.Split(',');
@@ -76,6 +88,7 @@ namespace Jiesen.Caching.Redis
             return sdkOptions;
         }
 
+        
 
         /// <summary>
         /// 读取配置文件

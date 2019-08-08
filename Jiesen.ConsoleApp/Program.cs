@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -6,11 +7,12 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Autofac;
-using CacheManager.Core;
+using Jiesen.Caching;
 using Jiesen.Component.Contract;
 using Jiesen.Contract;
 using Jiesen.EntityFramework;
 using Jiesen.Component.Service;
+using CacheFactory = CacheManager.Core.CacheFactory;
 
 namespace Jiesen.ConsoleApp
 {
@@ -18,18 +20,39 @@ namespace Jiesen.ConsoleApp
     {
         private static IContainer _container;
 
+        static ConcurrentDictionary<string,string> testTasks=new ConcurrentDictionary<string, string>();
         static void Main(string[] args)
         {
-            using (JiesenDbContext jiesenDbContext = new JiesenDbContext())
-            {
-                Person person = new Person() { Name = "test" };
-                jiesenDbContext.Persons.Add(person);
-                jiesenDbContext.SaveChanges();
-
-                var result = jiesenDbContext.Persons.Select(x => x.Name.Contains("te"));
-            }
+            //using (JiesenDbContext jiesenDbContext = new JiesenDbContext())
             //{
+            //    Person person = new Person() { Name = "test" };
+            //    jiesenDbContext.Persons.Add(person);
+            //    jiesenDbContext.SaveChanges();
+
+            //    var result = jiesenDbContext.Persons.Select(x => x.Name.Contains("te"));
+            //}
+            //{
+            //testTasks.AddOrUpdate("123", ()=>"","");
+
+
             _container = ConfigureDependencies();
+
+            //var localCache = _container.Resolve<ICache>();
+            //localCache.Set("1","2","3");
+            //var cacheResult = localCache.Get<string>("1", "2");
+            //Console.WriteLine(cacheResult);
+
+            using (var container = _container.BeginLifetimeScope("Cache"))
+            {
+                var redisCache = container.Resolve<ICache>();
+                redisCache.Set("redis","1","2");
+
+                Console.WriteLine(redisCache.Get<string>("redis", "1"));
+            }
+
+            _container.BeginLifetimeScope("Cache");
+
+
             //    var testService = _container.Resolve<ITestService>();
             //    var result = testService.Calculate(2, 3);
             //    Console.WriteLine(result);
@@ -52,8 +75,10 @@ namespace Jiesen.ConsoleApp
 
             //Console.WriteLine(redisCache.Get<string>("", "one"));
 
-            AutofacTest();
+            //AutofacTest();
 
+
+            
 
             Console.ReadLine();
         }
@@ -90,6 +115,7 @@ namespace Jiesen.ConsoleApp
             // Register default dependencies in the application container.
             var builder = new ContainerBuilder();
             builder.RegisterModule(new ServiceModule());
+            builder.RegisterModule(new CacheModule());
             _container = builder.Build();
             return _container;
         }

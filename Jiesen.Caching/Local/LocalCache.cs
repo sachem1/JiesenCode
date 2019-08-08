@@ -16,7 +16,7 @@ namespace Jiesen.Caching.Local
     {
         private readonly MemoryCache _cache = MemoryCache.Default;
         private readonly int _timeOut;
-        internal static readonly ICache Default = new LocalCache();
+        internal static readonly ICache Default;
         public LocalCache()
         {
             const string local = "Local";
