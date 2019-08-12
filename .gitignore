@@ -29,3 +29,5 @@
 /Test/Jiesen.Framework.Test/obj/Debug
 /Jiesen.WebApplication/obj/Debug
 /Jiesen.WebApplication/bin
+/.vs
+/Test/Jiesen.Caching.Test/obj
