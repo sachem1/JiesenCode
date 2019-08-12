@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Jiesen.Framework.Strategy;
+
+namespace Jiesen.ConsoleApp.Strategy
+{
+    public class NearAveragePrice:ICalcuation
+    {
+        List<string> testList=new List<string>();
+        public List<string> MatchCollect(List<object> objects)
+        {
+            objects.Add("NearAveragePrice");
+            return objects.Select(x=>x.ToString()).ToList();
+        }
+    }
+}

@@ -34,36 +34,40 @@ namespace Jiesen.ConsoleApp
             //{
             //testTasks.AddOrUpdate("123", ()=>"","");
 
-
+            //Console.WriteLine(Math.Abs(2.3));
+            //Console.WriteLine(Math.Abs(-2.1));
+            //Console.WriteLine(Math.Abs(-2.0));
             _container = ConfigureDependencies();
-
+            {
+                var testService = _container.Resolve<ITestService>();
+                var result = testService.Calculate(2, 3);
+                Console.WriteLine(result);
+            }
             //var localCache = _container.Resolve<ICache>();
             //localCache.Set("1","2","3");
             //var cacheResult = localCache.Get<string>("1", "2");
             //Console.WriteLine(cacheResult);
 
-            using (var container = _container.BeginLifetimeScope("Cache"))
-            {
-                var redisCache = container.Resolve<ICache>();
-                redisCache.Set("redis","1","2");
+            //using (var container = _container.BeginLifetimeScope("Cache"))
+            //{
+            //    var redisCache = container.Resolve<ICache>();
+            //    redisCache.Set("redis","1","2");
 
-                Console.WriteLine(redisCache.Get<string>("redis", "1"));
-            }
+            //    Console.WriteLine(redisCache.Get<string>("redis", "1"));
+            //}
 
-            _container.BeginLifetimeScope("Cache");
+            //_container.BeginLifetimeScope("Cache");
 
 
-            //    var testService = _container.Resolve<ITestService>();
-            //    var result = testService.Calculate(2, 3);
-            //    Console.WriteLine(result);
+
             //}
             //{
             //    CacheTest();
             //}
-            {
+            //{
                 //var ss = Bakversion();
                 //Console.WriteLine(ss);
-            }
+            //}
 
 
             //var localCache = Jiesen.Caching.CacheFactory.GetLocalCache();
@@ -76,9 +80,6 @@ namespace Jiesen.ConsoleApp
             //Console.WriteLine(redisCache.Get<string>("", "one"));
 
             //AutofacTest();
-
-
-            
 
             Console.ReadLine();
         }
