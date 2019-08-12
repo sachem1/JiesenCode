@@ -59,13 +59,13 @@ namespace Jiesen.Caching.Redis
             return connection.GetDatabase();
         }
 
-        public static Task<ConnectionMultiplexer> GetClientAsync(RedisSetting setting)
-        {
-            _connectionMultiplexers.AddOrUpdate(setting.ClientName,key =>
-            {
-                return ConnectionMultiplexer.ConnectAsync(Convert(setting));
-            });
-        }
+        //public static Task<ConnectionMultiplexer> GetClientAsync(RedisSetting setting)
+        //{
+        //    _connectionMultiplexers.AddOrUpdate(setting.ClientName,key =>
+        //    {
+        //        return ConnectionMultiplexer.ConnectAsync(Convert(setting));
+        //    });
+        //}
 
         private static ConfigurationOptions Convert(RedisSetting setting)
         {
