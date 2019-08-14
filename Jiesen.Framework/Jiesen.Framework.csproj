@@ -59,6 +59,8 @@
     <Compile Include="ConfigManager\DllTable.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Extensions\PropertyExtensions.cs" />
+    <Compile Include="Modules\DependsOnAttribute.cs" />
+    <Compile Include="Modules\JiesenModule.cs" />
     <Compile Include="Strategy\FiFoMatch.cs" />
     <Compile Include="FrameworkModule.cs" />
     <Compile Include="Models\DataSourceModel.cs" />
