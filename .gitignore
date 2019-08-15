@@ -31,3 +31,5 @@
 /Jiesen.WebApplication/bin
 /.vs
 /Test/Jiesen.Caching.Test/obj
+/Tools/WindowsForms/bin/Debug
+/Tools/WindowsForms/obj/Debug
