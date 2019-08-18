@@ -18,12 +18,20 @@ namespace WindowsForms
             InitializeComponent();
         }
         private delegate void InvokeCallback(string msg);
+
+        public event Action<string> Log;
+        private void OnLog(string msg)
+        {
+            Action<string> handle = Log;
+            if (handle != null)
+                handle(msg);
+        }
         private void btnStart_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < 11000; i++)
             {
-                Thread.Sleep(2000);
-                WriteLog(i.ToString());
+                Thread.Sleep(1000);
+                Log(i.ToString());
             }
         }
 
@@ -57,6 +65,18 @@ namespace WindowsForms
                 rtbMsg.AppendText(msg);
             }
 
+        }
+
+        private void Form_Load(object sender, EventArgs e)
+        {
+            Log += new Action<string>(Form_Log);
+        }
+
+        private void Form_Log(string obj)
+        {
+            this.rtbMsg.Invoke(new Action(()=> {
+                rtbMsg.AppendText(obj+"\r\n");
+            }) );
         }
     }
 }
