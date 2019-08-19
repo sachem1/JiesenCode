@@ -13,6 +13,7 @@ namespace WindowsForms
 {
     public partial class Form : System.Windows.Forms.Form
     {
+        private readonly int Max_Item_Count = 10000;
         public Form()
         {
             InitializeComponent();
@@ -22,41 +23,43 @@ namespace WindowsForms
         {
             for (int i = 0; i < 11000; i++)
             {
-                Thread.Sleep(2000);
                 WriteLog(i.ToString());
             }
         }
 
         private void WriteLog(string msg)
         {
-            Task.Factory.StartNew(() => { m_comm_MessageEvent(msg + "\r\n"); });
-            
+            var t = new Thread(delegate ()
+                {
+                    Thread.Sleep(200);
+                    rtbMsg.Invoke((MethodInvoker)delegate ()
+                    {
+                        m_comm_MessageEvent(msg);
+                    });
+                })
+            { IsBackground = true };
+            t.Start();
         }
 
         private void APMDoing(IAsyncResult result)
         {
-            var delegateWrite=(Func<int,string>)result.AsyncState;
+            var delegateWrite = (Func<int, string>)result.AsyncState;
 
             var finalResult = delegateWrite.EndInvoke(result);
             rtbMsg.AppendText(finalResult);
         }
 
-        void m_comm_MessageEvent(string msg)
+        public void m_comm_MessageEvent(string msg)
         {
-
             if (rtbMsg.InvokeRequired)
             {
-
-                InvokeCallback msgCallback = new InvokeCallback(m_comm_MessageEvent);
-
-                rtbMsg.Invoke(msgCallback, new object[] { msg });
+                InvokeCallback msgCallback = m_comm_MessageEvent;
+                rtbMsg.Invoke(msgCallback, msg);
             }
-
             else
             {
                 rtbMsg.AppendText(msg);
             }
-
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -67,7 +68,7 @@ namespace Jiesen.Framework.Modules
         {
             if (!IsJiesenModule(moduleType))
             {
-                throw new AbpInitializationException("此类型不是jiesen模块: " + moduleType.AssemblyQualifiedName);
+                throw new Exception("此类型不是jiesen模块: " + moduleType.AssemblyQualifiedName);
             }
 
             var list = new List<Type>();
@@ -91,7 +92,7 @@ namespace Jiesen.Framework.Modules
         {
             var list = new List<Type>();
             AddModuleAndDependenciesRecursively(list, moduleType);
-            list.AddIfNotContains(typeof(AbpKernelModule));
+            //list.AddIfNotContains(typeof(AbpKernelModule));
             return list;
         }
 
@@ -99,7 +100,7 @@ namespace Jiesen.Framework.Modules
         {
             if (!IsJiesenModule(module))
             {
-                throw new AbpInitializationException("This type is not an ABP module: " + module.AssemblyQualifiedName);
+                throw new Exception("This type is not an ABP module: " + module.AssemblyQualifiedName);
             }
 
             if (modules.Contains(module))

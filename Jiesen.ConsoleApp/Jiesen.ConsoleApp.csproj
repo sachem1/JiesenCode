@@ -72,6 +72,7 @@
     <None Include="App.config" />
     <None Include="Configs\Jiesen.Caching.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Configs\Jiesen.Framework.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
