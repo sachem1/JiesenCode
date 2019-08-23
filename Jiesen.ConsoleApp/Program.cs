@@ -13,6 +13,8 @@ using Jiesen.Contract;
 using Jiesen.EntityFramework;
 using Jiesen.Component.Service;
 using CacheFactory = CacheManager.Core.CacheFactory;
+using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace Jiesen.ConsoleApp
 {
@@ -23,6 +25,9 @@ namespace Jiesen.ConsoleApp
         static ConcurrentDictionary<string,string> testTasks=new ConcurrentDictionary<string, string>();
         static void Main(string[] args)
         {
+
+            //var stri = JsonConvert.SerializeObject(new { Name="张三",Age=18});
+
             //using (JiesenDbContext jiesenDbContext = new JiesenDbContext())
             //{
             //    Person person = new Person() { Name = "test" };
@@ -37,12 +42,12 @@ namespace Jiesen.ConsoleApp
             //Console.WriteLine(Math.Abs(2.3));
             //Console.WriteLine(Math.Abs(-2.1));
             //Console.WriteLine(Math.Abs(-2.0));
-            _container = ConfigureDependencies();
-            {
-                var testService = _container.Resolve<ITestService>();
-                var result = testService.Calculate(2, 3);
-                Console.WriteLine(result);
-            }
+            //_container = ConfigureDependencies();
+            //{
+            //    var testService = _container.Resolve<ITestService>();
+            //    var result = testService.Calculate(2, 3);
+            //    Console.WriteLine(result);
+            //}
             //var localCache = _container.Resolve<ICache>();
             //localCache.Set("1","2","3");
             //var cacheResult = localCache.Get<string>("1", "2");
@@ -65,8 +70,8 @@ namespace Jiesen.ConsoleApp
             //    CacheTest();
             //}
             //{
-                //var ss = Bakversion();
-                //Console.WriteLine(ss);
+            //var ss = Bakversion();
+            //Console.WriteLine(ss);
             //}
 
 
@@ -80,8 +85,45 @@ namespace Jiesen.ConsoleApp
             //Console.WriteLine(redisCache.Get<string>("", "one"));
 
             //AutofacTest();
-
+            TryCatch();
+            NoTryCatch();
             Console.ReadLine();
+        }
+        static int total = 100000;
+        private static void NoTryCatch()
+        {
+            Stopwatch stopwatch = new Stopwatch();
+
+            stopwatch.Start();
+            for (int i = 0; i < total; i++)
+            {
+                var str = "{\"Name\":\"张三\",\"Age\":18}";
+                var obj = JsonConvert.DeserializeObject(str);
+
+            }
+            Console.WriteLine($"{total}次无tryCatch耗时{stopwatch.ElapsedMilliseconds} ms");        
+
+        }
+        private static void TryCatch()
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            
+            stopwatch.Start();
+            for (int i = 0; i < total; i++)
+            {
+                try
+                {
+
+                    var str = "{\"Name\":\"张三\",\"Age\":18}";
+                    var obj = JsonConvert.DeserializeObject(str);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+            }
+            Console.WriteLine($"{total}次tryCatch耗时{stopwatch.ElapsedMilliseconds} ms");
         }
 
         private static string Bakversion()
