@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jiesen.Framework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace WindowsForms
             InitializeComponent();
         }
         private delegate void InvokeCallback(string msg);
-
+        WorkLog workLog = new WorkLog();
         public event Action<string> Log;
         private void OnLog(string msg)
         {
@@ -29,27 +30,24 @@ namespace WindowsForms
         }
         private void btnStart_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 11000; i++)
-            {
-                Thread.Sleep(1000);
-                Log(i.ToString());
-          }
+            workLog.StartWriteLog();
         }
 
-        private void WriteLog(string msg)
+
+        private void ShowLog(string msg)
         {
-            var t = new Thread(delegate ()
-                {
-                    Thread.Sleep(200);
-                    rtbMsg.Invoke((MethodInvoker)delegate ()
-                    {
-                        m_comm_MessageEvent(msg);
-                    });
-                })
-            { IsBackground = true };
-            t.Start();
+            rtbMsg.BeginInvoke(new Action(() =>
+            {
+                LogWrite(msg);
+            }));
         }
 
+        private void LogWrite(string msg)
+        {
+           
+            this.rtbMsg.AppendText(msg + "\r\n");
+            this.rtbMsg.ScrollToCaret();
+        }
         private void APMDoing(IAsyncResult result)
         {
             var delegateWrite = (Func<int, string>)result.AsyncState;
@@ -73,14 +71,23 @@ namespace WindowsForms
 
         private void Form_Load(object sender, EventArgs e)
         {
-            Log += new Action<string>(Form_Log);
+            
+            workLog.WriteLog += WorkLog_WriteLog;
+
+
+        }
+
+        private void WorkLog_WriteLog(string obj)
+        {
+            ShowLog(obj);
         }
 
         private void Form_Log(string obj)
         {
-            this.rtbMsg.Invoke(new Action(()=> {
-                rtbMsg.AppendText(obj+"\r\n");
-            }) );
+            this.rtbMsg.Invoke(new Action(() =>
+            {
+                rtbMsg.AppendText(obj + "\r\n");
+            }));
         }
     }
 }

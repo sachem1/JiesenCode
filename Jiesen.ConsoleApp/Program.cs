@@ -15,6 +15,7 @@ using Jiesen.Component.Service;
 using CacheFactory = CacheManager.Core.CacheFactory;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using Jiesen.Framework;
 
 namespace Jiesen.ConsoleApp
 {
@@ -85,10 +86,13 @@ namespace Jiesen.ConsoleApp
             //Console.WriteLine(redisCache.Get<string>("", "one"));
 
             //AutofacTest();
-            TryCatch();
-            NoTryCatch();
+            //TryCatch();
+            //NoTryCatch();
+
             Console.ReadLine();
         }
+        
+
         static int total = 100000;
         private static void NoTryCatch()
         {

@@ -69,6 +69,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Strategy\ICalcuation.cs" />
     <Compile Include="Strategy\IStrategy.cs" />
+    <Compile Include="WorkLog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Configs\Jiesen.Framework.config">

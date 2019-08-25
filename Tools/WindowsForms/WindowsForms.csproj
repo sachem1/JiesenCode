@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Jiesen.Framework\Jiesen.Framework.csproj">
+      <Project>{51DE2A05-6403-4DC8-8A78-AB6AB66E13DF}</Project>
+      <Name>Jiesen.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
