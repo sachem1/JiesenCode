@@ -44,7 +44,6 @@ namespace WindowsForms
 
         private void LogWrite(string msg)
         {
-           
             this.rtbMsg.AppendText(msg + "\r\n");
             this.rtbMsg.ScrollToCaret();
         }
@@ -71,10 +70,7 @@ namespace WindowsForms
 
         private void Form_Load(object sender, EventArgs e)
         {
-            
             workLog.WriteLog += WorkLog_WriteLog;
-
-
         }
 
         private void WorkLog_WriteLog(string obj)
