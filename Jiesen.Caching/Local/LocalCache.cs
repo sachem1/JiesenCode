@@ -7,8 +7,8 @@ using System.Runtime.Caching;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using Jiesen.Framework.Common;
-using Jiesen.Framework.ConfigManager;
+using Jiesen.Core.Common;
+using Jiesen.Core.ConfigManager;
 
 namespace Jiesen.Caching.Local
 {

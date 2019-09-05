@@ -67,15 +67,15 @@
     <Compile Include="Redis\RedisSetting.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Configs\Jiesen.Caching.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Jiesen.Framework\Jiesen.Framework.csproj">
-      <Project>{51de2a05-6403-4dc8-8a78-ab6ab66e13df}</Project>
-      <Name>Jiesen.Framework</Name>
+    <ProjectReference Include="..\Jiesen.Core\Jiesen.Core.csproj">
+      <Project>{ba181321-64be-45d8-8379-ecf4bdb437aa}</Project>
+      <Name>Jiesen.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

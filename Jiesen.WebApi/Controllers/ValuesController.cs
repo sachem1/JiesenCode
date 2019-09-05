@@ -45,6 +45,7 @@ namespace Jiesen.WebApi.Controllers
             test.Id = 12345678913112247;
             test.Name = "zhangsan";
             test.CreateTime=DateTime.Now;
+            throw new Exception("错误");
             return test;
         }
     }

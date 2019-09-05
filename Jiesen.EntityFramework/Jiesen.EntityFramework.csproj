@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.3.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.3\lib\net45\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -82,6 +85,10 @@
     <ProjectReference Include="..\Jiesen.Contract\Jiesen.Contract.csproj">
       <Project>{3a1fa1ed-a9d0-4f0e-a225-380755c6d2b3}</Project>
       <Name>Jiesen.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jiesen.Core\Jiesen.Core.csproj">
+      <Project>{BA181321-64BE-45D8-8379-ECF4BDB437AA}</Project>
+      <Name>Jiesen.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Jiesen.Framework\Jiesen.Framework.csproj">
       <Project>{51DE2A05-6403-4DC8-8A78-AB6AB66E13DF}</Project>

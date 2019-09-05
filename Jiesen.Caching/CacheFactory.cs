@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Jiesen.Caching.Local;
 using Jiesen.Caching.Redis;
-using Jiesen.Framework.Common;
+using Jiesen.Core.Common;
 
 namespace Jiesen.Caching
 {

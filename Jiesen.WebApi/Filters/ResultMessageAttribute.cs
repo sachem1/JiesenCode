@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
-using Jiesen.Framework.Enums;
-using Jiesen.Framework.Models;
+using Jiesen.Core.Enums;
+using Jiesen.Core.Models;
 using Jiesen.WebApi.ActionResult;
 
 namespace Jiesen.WebApi.Filters

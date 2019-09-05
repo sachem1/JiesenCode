@@ -3,8 +3,8 @@ using System.Collections.Concurrent;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using Jiesen.Framework.Common;
-using Jiesen.Framework.ConfigManager;
+using Jiesen.Core.Common;
+using Jiesen.Core.ConfigManager;
 using Newtonsoft.Json;
 using StackExchange.Redis;
 

@@ -1,10 +1,12 @@
 ﻿using Autofac;
 using Jiesen.ConsoleApp.Strategy;
+using Jiesen.Core.Modules;
+using Jiesen.Framework.Modules;
 using Jiesen.Framework.Strategy;
 
 namespace Jiesen.Framework
 {
-    public class FrameworkModule:Autofac.Module
+    public class FrameworkModule:JiesenModule
     {
         protected override void Load(ContainerBuilder builder)
         {

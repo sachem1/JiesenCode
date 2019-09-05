@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Jiesen.Framework.Extensions;
-using Jiesen.Framework.Models;
+using Jiesen.Core.Extensions;
+using Jiesen.Core.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 

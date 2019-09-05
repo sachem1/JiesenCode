@@ -34,6 +34,9 @@
     <Reference Include="Autofac, Version=4.9.3.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.9.3\lib\net45\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -48,32 +51,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\JiesenConvert.cs" />
-    <Compile Include="Common\StaticString.cs" />
-    <Compile Include="ConfigManager\AppConfig.cs" />
-    <Compile Include="ConfigManager\AppSet.cs" />
-    <Compile Include="ConfigManager\ConfigManager.cs" />
-    <Compile Include="ConfigManager\DbConnectionSet.cs" />
-    <Compile Include="ConfigManager\DllItem.cs" />
-    <Compile Include="ConfigManager\DllSet.cs" />
-    <Compile Include="ConfigManager\DllTable.cs" />
     <Compile Include="Contexts\AppContext.cs" />
     <Compile Include="Contexts\Context.cs" />
+    <Compile Include="Contexts\ContextBuilder.cs" />
     <Compile Include="Contexts\PlatformContext.cs" />
     <Compile Include="Contexts\UserContext.cs" />
-    <Compile Include="Enums\ResultState.cs" />
-    <Compile Include="Extensions\EnumExtensions.cs" />
-    <Compile Include="Extensions\PropertyExtensions.cs" />
-    <Compile Include="Models\ResultMessage.cs" />
-    <Compile Include="Modules\DependsOnAttribute.cs" />
-    <Compile Include="Modules\JiesenModule.cs" />
+    <Compile Include="Logs\ILogger.cs" />
+    <Compile Include="Logs\Log4Net.cs" />
+    <Compile Include="Logs\LoggerFactory.cs" />
+    <Compile Include="Modules\ModuleExtensions.cs" />
+    <Compile Include="Reflections\AssemblyFinder.cs" />
+    <Compile Include="Reflections\AttributeFinder.cs" />
+    <Compile Include="Reflections\MetaDataManager.cs" />
+    <Compile Include="Reflections\ReflectionExtensions.cs" />
+    <Compile Include="Reflections\ReflectionUtil.cs" />
+    <Compile Include="Reflections\TypeFinder.cs" />
     <Compile Include="Serializers\JsonConverter\DateTimeToStringConverter.cs" />
     <Compile Include="Serializers\JsonConverter\LongToStringConverter.cs" />
     <Compile Include="Serializers\JsonConverter\NullableDateTimeToStringConverter.cs" />
     <Compile Include="Serializers\JsonConverter\NullableLongToStringConverter.cs" />
     <Compile Include="Strategy\FiFoMatch.cs" />
     <Compile Include="FrameworkModule.cs" />
-    <Compile Include="Models\DataSourceModel.cs" />
     <Compile Include="Strategy\MatchType.cs" />
     <Compile Include="Strategy\NearAveragePrice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,11 +80,24 @@
     <Compile Include="WorkLog.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Configs\Jiesen.Framework.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Jiesen.Caching\Jiesen.Caching.csproj">
+      <Project>{7e527026-06b8-4715-89c4-6d5903a3672b}</Project>
+      <Name>Jiesen.Caching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jiesen.Core\Jiesen.Core.csproj">
+      <Project>{ba181321-64be-45d8-8379-ecf4bdb437aa}</Project>
+      <Name>Jiesen.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Autofac\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

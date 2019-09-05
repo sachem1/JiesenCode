@@ -252,6 +252,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Jiesen.Core\Jiesen.Core.csproj">
+      <Project>{ba181321-64be-45d8-8379-ecf4bdb437aa}</Project>
+      <Name>Jiesen.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Jiesen.Framework\Jiesen.Framework.csproj">
       <Project>{51DE2A05-6403-4DC8-8A78-AB6AB66E13DF}</Project>
       <Name>Jiesen.Framework</Name>

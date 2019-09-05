@@ -1,6 +1,6 @@
 ﻿using System;
-using Jiesen.Framework.Common;
-using Jiesen.Framework.ConfigManager;
+using Jiesen.Core.Common;
+using Jiesen.Core.ConfigManager;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Jiesen.Framework.Test

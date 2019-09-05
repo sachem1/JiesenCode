@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Jiesen.Core.Modules;
 using Jiesen.EntityFramework;
 using Jiesen.Framework.Modules;
 

@@ -4,8 +4,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Filters;
-using Jiesen.Framework.Enums;
-using Jiesen.Framework.Models;
+using Jiesen.Core.Enums;
+using Jiesen.Core.Models;
 
 namespace Jiesen.WebApi.Filters
 {
@@ -20,6 +20,11 @@ namespace Jiesen.WebApi.Filters
 
             if (context.Exception != null)
             {
+                var exceptionMessage = new ResultMessage(
+                   ResultState.Fail,
+                   $"{context.Exception}",
+                   null);
+                context.Response = context.Request.CreateResponse(exceptionMessage);
                 return;
             }
 
