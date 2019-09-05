@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiesen.WebApplication", "Ji
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsForms", "Tools\WindowsForms\WindowsForms.csproj", "{CFCE1ACD-DE0F-4104-A058-CC94101791D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiesen.WebApi", "Jiesen.WebApi\Jiesen.WebApi.csproj", "{B447C914-E714-40FA-8989-9BCF13F3AF8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{CFCE1ACD-DE0F-4104-A058-CC94101791D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFCE1ACD-DE0F-4104-A058-CC94101791D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFCE1ACD-DE0F-4104-A058-CC94101791D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B447C914-E714-40FA-8989-9BCF13F3AF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B447C914-E714-40FA-8989-9BCF13F3AF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B447C914-E714-40FA-8989-9BCF13F3AF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B447C914-E714-40FA-8989-9BCF13F3AF8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

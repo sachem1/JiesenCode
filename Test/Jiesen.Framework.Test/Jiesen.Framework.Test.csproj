@@ -46,7 +46,7 @@
       <HintPath>..\..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,7 +55,9 @@
     <Compile Include="ConfigurationTest.cs" />
     <Compile Include="Extensions\EnumExtensionsTest.cs" />
     <Compile Include="Extensions\NumType.cs" />
+    <Compile Include="FrameworkTestModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProgramInitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Configs\Jiesen.Framework.config">
@@ -67,6 +69,10 @@
     <ProjectReference Include="..\..\Jiesen.Caching\Jiesen.Caching.csproj">
       <Project>{7E527026-06B8-4715-89C4-6D5903A3672B}</Project>
       <Name>Jiesen.Caching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Jiesen.EntityFramework\Jiesen.EntityFramework.csproj">
+      <Project>{f77a3cef-7833-4fcd-a238-e1b9096c8a6d}</Project>
+      <Name>Jiesen.EntityFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Jiesen.Framework\Jiesen.Framework.csproj">
       <Project>{51de2a05-6403-4dc8-8a78-ab6ab66e13df}</Project>
