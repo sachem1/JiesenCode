@@ -65,5 +65,11 @@ namespace Jiesen.WebApi.Controllers
                 return null;
             }
         }
+
+        [Route("api/tradeService/CreateData")]
+        public IHttpActionResult CreateData(Test test) {
+
+            return Json(0);
+        }
     }
 }
