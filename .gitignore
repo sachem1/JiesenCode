@@ -24,3 +24,5 @@
 /Jiesen.Dapper/obj/Debug
 /packages/EntityFramework.6.2.0
 /packages
+/Jiesen.WebApi/obj
+/Jiesen.WebApi/bin
