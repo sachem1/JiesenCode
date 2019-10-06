@@ -50,26 +50,15 @@ namespace Jiesen.WebApi.Controllers
             };
         }
 
-        [Route("api/getMetadata")]
 
-        public IHttpActionResult GetMetaData(string name)
-        {
-            var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"metadata/{name}.json");
-            if (File.Exists(filePath))
-            {
-                var json = JsonConvert.DeserializeObject(File.ReadAllText(filePath, System.Text.Encoding.UTF8));
-                return Json(json);
-            }
-            else
-            {
-                return null;
-            }
-        }
 
         [Route("api/tradeService/CreateData")]
-        public IHttpActionResult CreateData(Test test) {
-
+        public IHttpActionResult CreateData(Test test)
+        {
             return Json(0);
         }
+
+
+
     }
 }
