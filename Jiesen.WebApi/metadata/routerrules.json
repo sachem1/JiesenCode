@@ -2,7 +2,7 @@
   {
     "path": "/TradeService",
     "icon": "social-buffer",
-    "name": "TradeService",
+    "name": "TradeServiceParent",
     "title": "账册备案申报",
     "component": "Main",
     "children": [
