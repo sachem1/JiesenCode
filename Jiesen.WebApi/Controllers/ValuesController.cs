@@ -36,6 +36,7 @@ namespace Epass.Vue.WebApi.Controllers
 
         public IHttpActionResult GetMenus(string loginName)
         {
+            loginName = "routerrules";
             var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"metadata/{loginName}.json");
             if (File.Exists(filePath))
             {
@@ -73,14 +74,13 @@ namespace Epass.Vue.WebApi.Controllers
         [HttpPost]
         public IHttpActionResult Login(LoginParam param)
         {
-            if (string.IsNullOrEmpty(param.UserName) && string.IsNullOrEmpty(param.Password)) return Json(1);
+            if (string.IsNullOrEmpty(param.LoginName) && string.IsNullOrEmpty(param.Password)) return Json(1);
             ReturnResult<BaseModel> r = new ReturnResult<BaseModel>();
             r.Result = new
             {
                 Token = "fajfljdsafsdf456s41f6ds",
                 UserId = 2,
-                LoginName = param.UserName,
-                param.UserName,
+                LoginName = param.LoginName,
                 LogonTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
             };
 

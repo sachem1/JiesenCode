@@ -7,7 +7,7 @@ namespace Epass.Vue.WebApi.Models.Dto
 {
     public class LoginParam
     {
-        public string UserName { get; set; }
+        public string LoginName { get; set; }
 
         public string Password { get; set; }
 
