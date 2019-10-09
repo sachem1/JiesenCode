@@ -28,3 +28,4 @@
 /Jiesen.WebApi/bin
 /.vs
 /Jiesen.Dapper/bin
+/Jiesen.Service/obj/Debug

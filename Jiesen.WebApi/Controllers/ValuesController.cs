@@ -53,7 +53,7 @@ namespace Epass.Vue.WebApi.Controllers
         public IHttpActionResult GetChildrenSystemData(string u)
         {
             if (string.IsNullOrEmpty(u)) return Json(1);
-            var res = new List<SelectItem>() { new SelectItem() { Title = "测试", Value = 1 } };
+            var res = new List<SelectItem>() { new SelectItem() { label = "测试", value = 1 } };
 
             return Json(res);
         }
@@ -63,7 +63,7 @@ namespace Epass.Vue.WebApi.Controllers
         public IHttpActionResult Logout(LoginOutParam param)
         {
             if (string.IsNullOrEmpty(param.UserId)) return Json(1);
-            var res = new List<SelectItem>() { new SelectItem() { Title = "测试", Value = 1 } };
+            var res = new List<SelectItem>() { new SelectItem() { label = "测试", value = 1 } };
 
             return Json(res);
         }

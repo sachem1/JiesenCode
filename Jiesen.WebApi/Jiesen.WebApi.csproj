@@ -161,8 +161,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Base1Controller.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\TradeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -172,15 +174,20 @@
     </Compile>
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\BaseSearch.cs" />
+    <Compile Include="Models\Dto\EntityDto.cs" />
     <Compile Include="Models\Dto\LoginOutParam.cs" />
     <Compile Include="Models\Dto\LoginParam.cs" />
+    <Compile Include="Models\Dto\ProductDto.cs" />
     <Compile Include="Models\Dto\SelectItem.cs" />
     <Compile Include="Models\Dto\TradeModelDto.cs" />
     <Compile Include="Models\Dto\UserModelDto.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\Entitys\Product.cs" />
     <Compile Include="Models\Enum\ResultState.cs" />
     <Compile Include="Models\PagedResult.cs" />
     <Compile Include="Models\RequestParam.cs" />
     <Compile Include="Models\ReturnResult.cs" />
+    <Compile Include="Models\Search\ProductSearch.cs" />
     <Compile Include="Models\Search\TradeSearchDto.cs" />
     <Compile Include="Models\Search\UserSearchDto.cs" />
     <Compile Include="Models\Test.cs" />

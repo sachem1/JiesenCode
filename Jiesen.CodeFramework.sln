@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiesen.Contract", "Jiesen.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiesen.WebApi", "Jiesen.WebApi\Jiesen.WebApi.csproj", "{F2C556CB-81A7-445F-AEBD-F71ADE2EAEC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jiesen.Service", "Jiesen.Service\Jiesen.Service.csproj", "{23D7582C-FFCA-4610-A39F-3C2B1C15CEDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{F2C556CB-81A7-445F-AEBD-F71ADE2EAEC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2C556CB-81A7-445F-AEBD-F71ADE2EAEC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2C556CB-81A7-445F-AEBD-F71ADE2EAEC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23D7582C-FFCA-4610-A39F-3C2B1C15CEDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D7582C-FFCA-4610-A39F-3C2B1C15CEDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D7582C-FFCA-4610-A39F-3C2B1C15CEDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23D7582C-FFCA-4610-A39F-3C2B1C15CEDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -19,16 +19,16 @@
       {
         "path": "/userService",
         "icon": "compose",
-        "name": "UserService",
+        "name": "userService",
         "title": "增删改查测试",
         "component": "CustomPage"
       },
       {
-        "path": "/TradeService2",
+        "path": "/userList",
         "icon": "compose",
-        "name": "TradeService2",
+        "name": "userList",
         "title": "ERP物料关联",
-        "component": "ListPage"
+        "component": "CustomPage"
 
       },
       {
@@ -71,7 +71,7 @@
     ]
   },
   {
-    "path": "/Out",
+    "path": "/OutInfo",
     "icon": "ios-grid-view",
     "name": "Outgroup",
     "title": "业务管控",
@@ -117,94 +117,6 @@
         "meta": {
           "hideInMenu": true
         }
-      }
-    ]
-  },
-  {
-    "path": "/check",
-    "icon": "ios-grid-view",
-    "name": "checkCategory",
-    "title": "报核管理",
-    "component": "Main",
-    "children": [
-      {
-        "path": "/",
-        "title": "加工貿易账册报核",
-        "name": "check",
-        "icon": "arrow-move",
-        "component": "EditaleTable"
-      },
-      {
-        "path": "/checkPort",
-        "title": "预核查",
-        "name": "checkPort",
-        "icon": "arrow-move",
-        "component": "EditaleTable"
-      }
-    ]
-  },
-  {
-    "path": "/businessLog",
-    "icon": "ios-grid-view",
-    "name": "LogCategory",
-    "title": "内销管理",
-    "component": "Main",
-    "children": [
-      {
-        "path": "/",
-        "title": "内销登记",
-        "name": "BusinessLog",
-        "icon": "arrow-move",
-        "component": "EditaleTable"
-      },
-      {
-        "path": "/historyLog",
-        "title": "内销匹配",
-        "name": "HistoryLog",
-        "icon": "arrow-move"
-      },
-      {
-        "path": "/errorLog",
-        "title": "内销清单",
-        "name": "ErrorLog",
-        "icon": "arrow-move"
-      }
-    ]
-  },
-  {
-    "path": "/systemSetting",
-    "icon": "ios-grid-view",
-    "name": "SystemSetting",
-    "title": "数据对接服务",
-    "component": "Main",
-    "children": [
-      {
-        "path": "/validatesetting",
-        "title": "企业BOM",
-        "name": "Validatesetting",
-        "icon": "compose",
-        "component": "EditaleTable"
-      },
-      {
-        "path": "/glossarysetting",
-        "title": "物料关系",
-        "name": "Glossarysetting",
-        "icon": "compose",
-        "component": "EditaleTable"
-      },
-      {
-        "path": "/cacheSetting",
-        "title": "单次合同要素",
-        "name": "CacheSetting",
-        "icon": "arrow-move",
-        "component": "ListPage"
-      },
-      {
-        "path": "/systemmaintain",
-        "title": "中方采购订单",
-        "name": "Systemmaintain",
-        "icon": "arrow-move",
-        "component": "EditaleTable"
       }
     ]
   }

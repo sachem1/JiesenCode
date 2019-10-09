@@ -7,8 +7,10 @@ namespace Epass.Vue.WebApi.Models.Dto
 {
     public class SelectItem
     {
-        public string Title { get; set; }
+        public string label { get; set; }
 
-        public object Value { get; set; }
+        public object value { get; set; }
+
+        public object parentValue { get; set; } = "";
     }
 }
