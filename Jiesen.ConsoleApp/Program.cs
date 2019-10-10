@@ -10,6 +10,7 @@ using CacheManager.Core;
 using Jiesen.Component.Contract;
 using Jiesen.Contract;
 using Jiesen.EntityFramework;using Jiesen.Component.Service;
+using Newtonsoft.Json;
 
 namespace Jiesen.ConsoleApp
 {
@@ -19,14 +20,14 @@ namespace Jiesen.ConsoleApp
 
         static void Main(string[] args)
         {
-            using (JiesenDbContext jiesenDbContext = new JiesenDbContext())
-            {
-                Person person = new Person() { Name = "test" };
-                jiesenDbContext.Persons.Add(person);
-                jiesenDbContext.SaveChanges();
+            //using (JiesenDbContext jiesenDbContext = new JiesenDbContext())
+            //{
+            //    Person person = new Person() { Name = "test" };
+            //    jiesenDbContext.Persons.Add(person);
+            //    jiesenDbContext.SaveChanges();
 
-                var result = jiesenDbContext.Persons.Select(x => x.Name.Contains("te"));
-            }
+            //    var result = jiesenDbContext.Persons.Select(x => x.Name.Contains("te"));
+            //}
             //{
             //    _container = ConfigureDependencies();
             //    var testService = _container.Resolve<ITestService>();
@@ -34,11 +35,21 @@ namespace Jiesen.ConsoleApp
             //    Console.WriteLine(result);
             //}
             {
-                CacheTest();
+               // CacheTest();
             }
             {
                 //var ss = Bakversion();
                 //Console.WriteLine(ss);
+            }
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    Task.Factory.StartNew(() =>
+                    {
+                        var obj = TestConnection.GetConnnection();
+                        Console.WriteLine("当前连接:" + JsonConvert.SerializeObject(obj));
+                    });
+                }               
             }
 
             Console.ReadLine();
