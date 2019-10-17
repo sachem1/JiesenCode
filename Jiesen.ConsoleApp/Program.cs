@@ -42,14 +42,14 @@ namespace Jiesen.ConsoleApp
                 //Console.WriteLine(ss);
             }
             {
-                for (int i = 0; i < 10; i++)
-                {
-                    Task.Factory.StartNew(() =>
-                    {
-                        var obj = TestConnection.GetConnnection();
-                        Console.WriteLine("当前连接:" + JsonConvert.SerializeObject(obj));
-                    });
-                }               
+                //for (int i = 0; i < 10; i++)
+                //{
+                //    Task.Factory.StartNew(() =>
+                //    {
+                //        var obj = TestConnection.GetConnnection();
+                //        Console.WriteLine("当前连接:" + JsonConvert.SerializeObject(obj));
+                //    });
+                //}               
             }
 
             Console.ReadLine();

@@ -58,9 +58,9 @@ namespace Epass.Vue.WebApi.Controllers
                 InitData();
             if (!string.IsNullOrEmpty(tradeSearch?.Name))
             {
-                return new PagedResult<UserModelDto>() { items = UserList.Where(x => x.Name.Contains(tradeSearch.Name)).ToList(), totalCount = UserList.Count };
+                return new PagedResult<UserModelDto>() { Items = UserList.Where(x => x.Name.Contains(tradeSearch.Name)).ToList(), TotalCount = UserList.Count };
             }
-            return new PagedResult<UserModelDto>() { items = UserList, totalCount = UserList.Count };
+            return new PagedResult<UserModelDto>() { Items = UserList, TotalCount = UserList.Count };
         }
 
         private void InitData()

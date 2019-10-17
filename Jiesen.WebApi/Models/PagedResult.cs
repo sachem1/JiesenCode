@@ -7,9 +7,9 @@ namespace Epass.Vue.WebApi.Models
 {
     public class PagedResult<T> where T : class
     {
-        public int totalCount { get; set; }
+        public int TotalCount { get; set; }
 
-        public List<T> items { get; set; }
+        public List<T> Items { get; set; }
 
     }
 }

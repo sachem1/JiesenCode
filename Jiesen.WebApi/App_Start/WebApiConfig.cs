@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jiesen.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -12,6 +13,11 @@ namespace Jiesen.WebApi
         {
             // Web API 配置和服务
             config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+
+            //config.Formatters.Add(new NullableLongToStringConverter());
+
+            //config.Formatters.
+
             // Web API 路由
             config.MapHttpAttributeRoutes();
 

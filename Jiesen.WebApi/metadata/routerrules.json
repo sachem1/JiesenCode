@@ -9,12 +9,13 @@
       {
         "path": "/",
         "icon": "compose",
-        "name": "TradeService",
+        "name": "userList",
+        "module": "bsbookrecord",
         "title": "企业内部编号",
         "meta": {
           "access": "1"
         },
-        "component": "EditaleTable"
+        "component": "CustomPage"
       },
       {
         "path": "/userService",
@@ -24,9 +25,9 @@
         "component": "CustomPage"
       },
       {
-        "path": "/userList",
+        "path": "/userList1",
         "icon": "compose",
-        "name": "userList",
+        "name": "userList1",
         "title": "ERP物料关联",
         "component": "CustomPage"
 

@@ -23,9 +23,9 @@ namespace Epass.Vue.WebApi.Controllers
         {
             if (!string.IsNullOrEmpty(tradeSearch?.Name))
             {
-                return new PagedResult<TradeModelDto>() { items = TradeModelList.Where(x => x.Name.Contains(tradeSearch.Name)).ToList(), totalCount = TradeModelList.Count };
+                return new PagedResult<TradeModelDto>() { Items = TradeModelList.Where(x => x.Name.Contains(tradeSearch.Name)).ToList(), TotalCount = TradeModelList.Count };
             }
-            return new PagedResult<TradeModelDto>() { items = TradeModelList, totalCount = TradeModelList.Count };
+            return new PagedResult<TradeModelDto>() { Items = TradeModelList, TotalCount = TradeModelList.Count };
         }
 
         [Route("api/tradeService/Create")]
