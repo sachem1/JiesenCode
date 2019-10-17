@@ -7,7 +7,7 @@ namespace Jiesen.WebApi.Extensions
 {
     public static class StartupExtensions
     {
-        public static void JsonFormatters(this HttpConfiguration configuration)
+        public static void Formatters(this HttpConfiguration configuration)
         {
             configuration.Formatters.JsonFormatter.SerializerSettings=new JsonSerializerSettings
             {
