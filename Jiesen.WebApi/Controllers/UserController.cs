@@ -34,7 +34,7 @@ namespace Epass.Vue.WebApi.Controllers
 
         [Route("api/user/deleteRang")]
         [HttpPost]
-        public ReturnResult<UserModelDto> DeleteRang(IList<string> ids)
+        public ReturnResult<UserModelDto> DeleteRang(IList<long> ids)
         {
             if (!ids.Any()) return new ReturnResult<UserModelDto>() { Status = 1, Message = "请选择要删除的数据!" };
             UserList.RemoveAll(x => ids.Contains(x.Id));
@@ -52,15 +52,15 @@ namespace Epass.Vue.WebApi.Controllers
 
         [Route("api/user/GetPaged")]
         [HttpPost]
-        public PagedResult<UserModelDto> GetPaged(UserModelDto tradeSearch)
+        public ReturnResult<PagedResult<UserModelDto>> GetPaged(UserModelDto tradeSearch)
         {
             if (!UserList.Any())
                 InitData();
             if (!string.IsNullOrEmpty(tradeSearch?.Name))
             {
-                return new PagedResult<UserModelDto>() { Items = UserList.Where(x => x.Name.Contains(tradeSearch.Name)).ToList(), TotalCount = UserList.Count };
+                return new ReturnResult<PagedResult<UserModelDto>>() { Data = new PagedResult<UserModelDto>() { Items = UserList.Where(x => x.Name.Contains(tradeSearch.Name)).ToList(), TotalCount = UserList.Count } };
             }
-            return new PagedResult<UserModelDto>() { Items = UserList, TotalCount = UserList.Count };
+            return new ReturnResult<PagedResult<UserModelDto>>() { Data = new PagedResult<UserModelDto>() { Items = UserList, TotalCount = UserList.Count } };
         }
 
         private void InitData()
@@ -74,7 +74,8 @@ namespace Epass.Vue.WebApi.Controllers
                     Age = 20 + i,
                     Address = random.Next(1000, 100000).ToString(),
                     LoginName = "dfdf",
-                    Password = random.Next(100000, 1000000).ToString()
+                    Password = random.Next(100000, 1000000).ToString(),
+                    Id = DateTime.Now.Ticks
                 };
                 UserList.Add(userModel);
             }

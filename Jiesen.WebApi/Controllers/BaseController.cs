@@ -9,12 +9,12 @@ namespace Epass.Vue.WebApi.Controllers
     {
         public ReturnResult<T> GenerateSuccessResult(T t)
         {
-            return new ReturnResult<T> { Status = (int)ResultState.Success, Result = t, Message = "请求成功" };
+            return new ReturnResult<T> { Status = (int)ResultState.Success, Data = t, Message = "请求成功" };
         }
 
         public ReturnResult<T> GenerateFailResult(int code, T t, string message)
         {
-            return new ReturnResult<T> { Status = code, Result = t, Message = message };
+            return new ReturnResult<T> { Status = code, Data = t, Message = message };
         }
 
         public virtual PagedResult<T> GetPaged(BaseSearch search)

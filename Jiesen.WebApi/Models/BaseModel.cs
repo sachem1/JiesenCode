@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Epass.Vue.WebApi.Models
 {
-    public class BaseModel: EntityDto<string>
+    public class BaseModel: EntityDto<long>
     {
 
     }

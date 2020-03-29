@@ -6,6 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Web;
 using System.Web.Http;
 
 namespace Jiesen.WebApi.Controllers
@@ -58,7 +60,27 @@ namespace Jiesen.WebApi.Controllers
             return Json(0);
         }
 
-
+        [Route("api/tradeService/exportPdf")]
+        public HttpResponseMessage exportPdf()
+        {
+            var fileFulllName = AppDomain.CurrentDomain.BaseDirectory + "download/test.pdf";
+            if (File.Exists(fileFulllName))
+            {
+                var downFileName = new FileInfo(fileFulllName).Name;
+                var dataBytes = File.ReadAllBytes(fileFulllName);
+                HttpResponseMessage httpResponseMessage = new HttpResponseMessage(HttpStatusCode.OK);
+                httpResponseMessage.Content = new ByteArrayContent(dataBytes);
+                httpResponseMessage.Content.Headers.ContentDisposition =
+                    new ContentDispositionHeaderValue("attachment");
+                httpResponseMessage.Content.Headers.ContentDisposition.FileName = downFileName;
+                httpResponseMessage.Content.Headers.ContentType =
+                    new MediaTypeHeaderValue("application/octet-stream");
+                httpResponseMessage.Headers.Add("Access-Control-Expose-Headers", "FileName");
+                httpResponseMessage.Headers.Add("FileName", HttpUtility.UrlEncode(downFileName));
+                return httpResponseMessage;
+            }
+            return new HttpResponseMessage(HttpStatusCode.NotFound);
+        }
 
 
 

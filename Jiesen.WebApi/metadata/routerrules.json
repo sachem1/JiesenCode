@@ -7,15 +7,278 @@
     "component": "Main",
     "children": [
       {
-        "path": "/",
+        "path": "/userService",
         "icon": "compose",
-        "name": "userList",
+        "name": "userService",
         "module": "bsbookrecord",
         "title": "企业内部编号",
         "meta": {
           "access": "1"
         },
         "component": "CustomPage"
+      },
+      {
+        "path": "/testList",
+        "icon": "compose",
+        "name": "testList",
+        "module": "test",
+        "title": "增删改查测试",
+        "component": "CustomPage"
+      },
+      {
+        "path": "/testPage",
+        "icon": "compose",
+        "name": "testPage",
+        "module": "test",
+        "title": "ERP物料关联",
+        "component": "CustomPage"
+
+      },
+      {
+        "path": "/userTab1",
+        "icon": "compose",
+        "name": "userTab1",
+        "module": "test",
+        "title": "企业单耗管理",
+        "component": "EditaleTable"
+
+      },
+      {
+        "path": "/",
+        "icon": "compose",
+        "name": "TradeService4",
+        "title": "企业资质",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "icon": "compose",
+        "title": "资质备案查询",
+        "name": "TradeService5",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "title": "加工贸易账册",
+        "name": "TradeService6",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "title": "加工贸易账册查询",
+        "name": "TradeService7",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/userService",
+        "icon": "compose",
+        "name": "userService",
+        "title": "增删改查测试",
+        "component": "CustomPage"
+      },
+      {
+        "path": "/userList1",
+        "icon": "compose",
+        "name": "userList1",
+        "title": "ERP物料关联",
+        "component": "CustomPage"
+
+      },
+      {
+        "path": "/TradeService3",
+        "icon": "compose",
+        "name": "TradeService3",
+        "title": "企业单耗管理",
+        "component": "EditaleTable"
+
+      },
+      {
+        "path": "/",
+        "icon": "compose",
+        "name": "TradeService4",
+        "title": "企业资质",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "icon": "compose",
+        "title": "资质备案查询",
+        "name": "TradeService5",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "title": "加工贸易账册",
+        "name": "TradeService6",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "title": "加工贸易账册查询",
+        "name": "TradeService7",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/userService",
+        "icon": "compose",
+        "name": "userService",
+        "title": "增删改查测试",
+        "component": "CustomPage"
+      },
+      {
+        "path": "/userList1",
+        "icon": "compose",
+        "name": "userList1",
+        "title": "ERP物料关联",
+        "component": "CustomPage"
+
+      },
+      {
+        "path": "/TradeService3",
+        "icon": "compose",
+        "name": "TradeService3",
+        "title": "企业单耗管理",
+        "component": "EditaleTable"
+
+      },
+      {
+        "path": "/",
+        "icon": "compose",
+        "name": "TradeService4",
+        "title": "企业资质",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "icon": "compose",
+        "title": "资质备案查询",
+        "name": "TradeService5",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "title": "加工贸易账册",
+        "name": "TradeService6",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "title": "加工贸易账册查询",
+        "name": "TradeService7",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/userService",
+        "icon": "compose",
+        "name": "userService",
+        "title": "增删改查测试",
+        "component": "CustomPage"
+      },
+      {
+        "path": "/userList1",
+        "icon": "compose",
+        "name": "userList1",
+        "title": "ERP物料关联",
+        "component": "CustomPage"
+
+      },
+      {
+        "path": "/TradeService3",
+        "icon": "compose",
+        "name": "TradeService3",
+        "title": "企业单耗管理",
+        "component": "EditaleTable"
+
+      },
+      {
+        "path": "/",
+        "icon": "compose",
+        "name": "TradeService4",
+        "title": "企业资质",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "icon": "compose",
+        "title": "资质备案查询",
+        "name": "TradeService5",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "title": "加工贸易账册",
+        "name": "TradeService6",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "title": "加工贸易账册查询",
+        "name": "TradeService7",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/userService",
+        "icon": "compose",
+        "name": "userService",
+        "title": "增删改查测试",
+        "component": "CustomPage"
+      },
+      {
+        "path": "/userList1",
+        "icon": "compose",
+        "name": "userList1",
+        "title": "ERP物料关联",
+        "component": "CustomPage"
+
+      },
+      {
+        "path": "/TradeService3",
+        "icon": "compose",
+        "name": "TradeService3",
+        "title": "企业单耗管理",
+        "component": "EditaleTable"
+
+      },
+      {
+        "path": "/",
+        "icon": "compose",
+        "name": "TradeService4",
+        "title": "企业资质",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "icon": "compose",
+        "title": "资质备案查询",
+        "name": "TradeService5",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "title": "加工贸易账册",
+        "name": "TradeService6",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
+      },
+      {
+        "path": "/",
+        "title": "加工贸易账册查询",
+        "name": "TradeService7",
+        "icon": "arrow-move",
+        "component": "EditaleTable"
       },
       {
         "path": "/userService",

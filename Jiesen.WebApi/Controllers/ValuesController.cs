@@ -61,22 +61,22 @@ namespace Epass.Vue.WebApi.Controllers
 
         [Route("api/auth/logout")]
         [HttpPost]
-        public IHttpActionResult Logout(LoginOutParam param)
+        public ReturnResult<object> Logout(LoginOutParam param)
         {
-            if (string.IsNullOrEmpty(param.UserId)) return Json(1);
+            if (string.IsNullOrEmpty(param.UserId)) return new ReturnResult<object>() { };
             var res = new List<SelectItem>() { new SelectItem() { label = "测试", value = 1 } };
 
-            return Json(res);
+            return new ReturnResult<object>() { Data = res };
         }
 
 
         [Route("api/auth/login")]
         [HttpPost]
-        public IHttpActionResult Login(LoginParam param)
+        public ReturnResult<object> Login(LoginParam param)
         {
-            if (string.IsNullOrEmpty(param.LoginName) && string.IsNullOrEmpty(param.Password)) return Json(1);
-            ReturnResult<BaseModel> r = new ReturnResult<BaseModel>();
-            r.Result = new
+            if (string.IsNullOrEmpty(param.LoginName) && string.IsNullOrEmpty(param.Password)) return new ReturnResult<object> {Status=1 };
+            ReturnResult<object> r = new ReturnResult<object>();
+            r.Data = new
             {
                 Token = "fajfljdsafsdf456s41f6ds",
                 UserId = 2,
@@ -84,7 +84,7 @@ namespace Epass.Vue.WebApi.Controllers
                 LogonTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
             };
 
-            return Json(r);
+            return r;
         }
     }
 }

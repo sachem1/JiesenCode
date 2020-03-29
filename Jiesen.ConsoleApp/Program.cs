@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using Autofac;
 using CacheManager.Core;
 using Jiesen.Component.Contract;
-using Jiesen.Contract;
 using Jiesen.EntityFramework;using Jiesen.Component.Service;
 using Newtonsoft.Json;
 

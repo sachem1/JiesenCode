@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Jiesen.EntityFramework</RootNamespace>
     <AssemblyName>Jiesen.EntityFramework</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,15 +66,17 @@
     <Compile Include="IsUnicode.cs" />
     <Compile Include="JiesenDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\StaticRepository.cs" />
+    <Compile Include="UnitOfWork\StaticUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Jiesen.Contract\Jiesen.Contract.csproj">
-      <Project>{3a1fa1ed-a9d0-4f0e-a225-380755c6d2b3}</Project>
-      <Name>Jiesen.Contract</Name>
+    <ProjectReference Include="..\Jiesen.Core\Jiesen.Core.csproj">
+      <Project>{1c11f99a-24e3-48d9-86f2-9d9335d20df8}</Project>
+      <Name>Jiesen.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -32,7 +32,7 @@ namespace Epass.Vue.WebApi.Controllers
         public ReturnResult<TradeModelDto> Create(TradeModelDto model)
         {
             if (string.IsNullOrEmpty(model.Name)) return GenerateFailResult(1, null, "");
-            model.Id = DateTime.Now.Ticks.ToString();
+            model.Id = DateTime.Now.Ticks;
             TradeModelList.Add(model);
             return GenerateSuccessResult(model);
         }
@@ -52,7 +52,7 @@ namespace Epass.Vue.WebApi.Controllers
 
         [Route("api/tradeService/DeleteRang")]
         [HttpPost]
-        public ReturnResult<TradeModelDto> DeleteRang(List<string> ids)
+        public ReturnResult<TradeModelDto> DeleteRang(List<long> ids)
         {
             TradeModelList.RemoveAll(x => ids.Contains(x.Id));
             return GenerateSuccessResult(null);
@@ -60,7 +60,7 @@ namespace Epass.Vue.WebApi.Controllers
 
         [Route("api/tradeService/Delete")]
         [HttpDelete]
-        public ReturnResult<TradeModelDto> Delete(string id)
+        public ReturnResult<TradeModelDto> Delete(long id)
         {
             TradeModelList.RemoveAll(x => id == x.Id);
             return GenerateSuccessResult(null);
@@ -72,10 +72,10 @@ namespace Epass.Vue.WebApi.Controllers
         {
             return new ReturnResult<List<SelectItem>>()
             {
-                Result = new List<SelectItem>()
+                Data = new List<SelectItem>()
                 {
                     new SelectItem(){label="北京市",value="1010",parentValue="010"},
-                    new SelectItem(){label="上海市",value="1021",parentValue="021"},
+ new SelectItem(){label="上海市",value="1021",parentValue="021"},
                     new SelectItem(){label="广州市",value="1030",parentValue="030"},
                     new SelectItem(){label="深圳市",value="1031",parentValue="030"},
                     new SelectItem(){label="珠海市",value="1032",parentValue="030"}
@@ -89,12 +89,12 @@ namespace Epass.Vue.WebApi.Controllers
         {
             return new ReturnResult<List<SelectItem>>()
             {
-                Result = new List<SelectItem>()
-                {
+                Data = new List<SelectItem>()
+{
                     new SelectItem(){label="北京",value="010"},
                     new SelectItem(){label="上海",value="021"},
                     new SelectItem(){label="广东省",value="030"}
-                },
+                                },
                 Status = 0
             };
         }

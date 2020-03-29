@@ -13,12 +13,12 @@ namespace Epass.Vue.WebApi.Controllers
     {
         public ReturnResult<TModel> GenerateSuccessResult(TModel t)
         {
-            return new ReturnResult<TModel> { Status = (int)ResultState.Success, Result = t, Message = "请求成功" };
+            return new ReturnResult<TModel> { Status = (int)ResultState.Success, Data = t, Message = "请求成功" };
         }
 
         public ReturnResult<TModel> GenerateFailResult(int code, TModel t, string message)
         {
-            return new ReturnResult<TModel> { Status = code, Result = t, Message = message };
+            return new ReturnResult<TModel> { Status = code, Data = t, Message = message };
         }
 
         public virtual PagedResult<TModel> GetPaged(BaseSearch search)

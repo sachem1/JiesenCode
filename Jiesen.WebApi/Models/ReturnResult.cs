@@ -11,6 +11,6 @@ namespace Epass.Vue.WebApi.Models
 
         public string Message { get; set; }
 
-        public Object Result { get; set; }
+        public Object Data { get; set; }
     }
 }

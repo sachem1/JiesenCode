@@ -8,10 +8,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Jiesen.ConsoleApp</RootNamespace>
     <AssemblyName>Jiesen.ConsoleApp</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -71,6 +72,14 @@
     <ProjectReference Include="..\Jiesen.Contract\Jiesen.Contract.csproj">
       <Project>{3a1fa1ed-a9d0-4f0e-a225-380755c6d2b3}</Project>
       <Name>Jiesen.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jiesen.Core\Jiesen.Core.csproj">
+      <Project>{1c11f99a-24e3-48d9-86f2-9d9335d20df8}</Project>
+      <Name>Jiesen.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jiesen.Dapper\Jiesen.Dapper.csproj">
+      <Project>{ed20ded0-c976-46ae-b4b0-8cb33bee7612}</Project>
+      <Name>Jiesen.Dapper</Name>
     </ProjectReference>
     <ProjectReference Include="..\Jiesen.EntityFramework\Jiesen.EntityFramework.csproj">
       <Project>{f77a3cef-7833-4fcd-a238-e1b9096c8a6d}</Project>
