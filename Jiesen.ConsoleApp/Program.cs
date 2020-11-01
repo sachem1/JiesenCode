@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 using Autofac;
 using CacheManager.Core;
 using Jiesen.Component.Contract;
-using Jiesen.EntityFramework;using Jiesen.Component.Service;
+using Jiesen.EntityFramework;
+using Jiesen.Component.Service;
 using Newtonsoft.Json;
 
 namespace Jiesen.ConsoleApp
@@ -34,7 +35,7 @@ namespace Jiesen.ConsoleApp
             //    Console.WriteLine(result);
             //}
             {
-               // CacheTest();
+                // CacheTest();
             }
             {
                 //var ss = Bakversion();
@@ -50,6 +51,20 @@ namespace Jiesen.ConsoleApp
                 //    });
                 //}               
             }
+            Random random = new Random((int)DateTime.Now.Ticks);
+            List<int> list = new List<int>();
+            for (int i = 0; i < 20; i++)
+            {
+                list.Add(random.Next(20));
+            }
+            //快排
+            var arr = list.ToArray();
+            Console.WriteLine(string.Join(",", arr));
+            Test.QuickSort(arr, 0, arr.Length - 1);
+            Console.WriteLine(string.Join(",", arr));
+            // 二分
+            var res = Test.BisectionAlgorithm(arr, 8);
+            Console.WriteLine(res >= 0 ? $"二分查找结果:{res},{arr[res]}" : "未找到结果");
 
             Console.ReadLine();
         }

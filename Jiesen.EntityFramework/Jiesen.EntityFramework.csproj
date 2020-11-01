@@ -67,6 +67,7 @@
     <Compile Include="JiesenDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\StaticRepository.cs" />
+    <Compile Include="UnitOfWork\IStaticEfUnitOfWork.cs" />
     <Compile Include="UnitOfWork\StaticUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>

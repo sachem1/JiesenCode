@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using Jiesen.Core.Domain.UOW;
 
 namespace Jiesen.EntityFramework.UnitOfWork
 {
-    class StaticUnitOfWork:IUnitOfWork
+    class StaticUnitOfWork:IStaticEfUnitOfWork
     {
         public void Commit()
         {
@@ -20,6 +21,11 @@ namespace Jiesen.EntityFramework.UnitOfWork
         }
 
         public void RollbackChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public TDbContext GetOrCreateDbContext<TDbContext>() where TDbContext : DbContext
         {
             throw new NotImplementedException();
         }

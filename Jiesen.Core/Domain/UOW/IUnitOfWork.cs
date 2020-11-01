@@ -16,5 +16,6 @@
         /// 回滚所有的请求
         /// </summary>
         void RollbackChanges();
+
     }
 }

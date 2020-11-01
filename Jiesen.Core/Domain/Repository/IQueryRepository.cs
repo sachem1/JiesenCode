@@ -11,7 +11,7 @@ namespace Jiesen.Core.Domain.Repository
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        long Get(long id);
+        TEntity Get(long id);
 
         /// <summary>
         ///获取所有的实体

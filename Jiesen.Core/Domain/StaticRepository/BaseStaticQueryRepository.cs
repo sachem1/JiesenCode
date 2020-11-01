@@ -6,21 +6,23 @@ using Jiesen.Core.Model;
 
 namespace Jiesen.Core.Domain.StaticRepository
 {
-    public abstract class BaseStaticQueryRepository<TEntity> :IStaticQueryRepository<TEntity> where TEntity : class, IEntity
+    public abstract class BaseStaticQueryRepository<TEntity> : IStaticQueryRepository<TEntity> where TEntity : class, IEntity
     {
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void Dispose();
 
-        public long Get(long id)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public virtual TEntity Get(long id)
         {
-            throw new NotImplementedException();
+            return Get(id);
         }
 
         public IQueryable<TEntity> GetAll(bool isReadOnly = false)
         {
-            throw new NotImplementedException();
+            return GetAll(false);
         }
     }
 }
